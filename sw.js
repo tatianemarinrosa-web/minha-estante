@@ -1,4 +1,4 @@
-const CACHE = "minha-estante-v3";
+const CACHE = "minha-estante-v4";
 const ASSETS = ["./", "./index.html", "./manifest.json", "./icon.svg"];
 
 self.addEventListener("install", event => {
@@ -19,19 +19,14 @@ self.addEventListener("fetch", event => {
       fetch(event.request)
         .then(response => {
           const copy = response.clone();
-          caches.open(CACHE).then(cache => cache.put(event.request, copy));
+          caches.open(CACHE).then(cache => cache.put("./index.html", copy));
           return response;
         })
-        .catch(() => caches.match(event.request).then(cached => cached || caches.match("./index.html")))
+        .catch(() => caches.match("./index.html"))
     );
     return;
   }
-
   event.respondWith(
-    caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
-      const copy = response.clone();
-      caches.open(CACHE).then(cache => cache.put(event.request, copy));
-      return response;
-    }))
+    caches.match(event.request).then(cached => cached || fetch(event.request))
   );
 });
