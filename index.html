@@ -1,171 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#171717">
-  <meta name="description" content="Minha Estante: filmes, séries e livros.">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <title>Minha Estante</title>
-  <style>
-    :root{--bg:#f7f4ee;--surface:#fff;--text:#171717;--muted:#77736c;--border:#e7e0d6;--soft:#eee7dc;--accent:#171717;--danger:#a83f35;--radius:20px;--shadow:0 12px 30px rgba(0,0,0,.06)}
-    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}.app{width:min(100%,820px);margin:auto;padding:22px 16px 105px}header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:16px}h1{margin:0;font-size:clamp(30px,7vw,44px);letter-spacing:-1.6px}.subtitle{margin:6px 0 0;color:var(--muted);font-size:14px;line-height:1.45}.version{font-size:11px;color:var(--muted);margin-top:5px}.primary{border:0;background:var(--accent);color:white;padding:12px 15px;border-radius:14px;font-weight:750;cursor:pointer}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:16px 0}.stat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:13px}.stat strong{display:block;font-size:21px}.stat span{font-size:12px;color:var(--muted)}.toolbar{position:sticky;top:0;z-index:5;background:linear-gradient(var(--bg) 88%,rgba(247,244,238,0));padding:10px 0 15px}.search-wrap{position:relative}.search-wrap .glass{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:17px;pointer-events:none}.search{width:100%;border:1px solid var(--border);background:var(--surface);border-radius:15px;padding:14px 15px 14px 43px;outline:none}.filters{display:flex;gap:8px;overflow-x:auto;padding:10px 0 0;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.chip{border:1px solid var(--border);background:var(--surface);padding:9px 12px;border-radius:999px;white-space:nowrap;font-size:13px;cursor:pointer}.chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}.list{display:grid;gap:12px}.card{display:grid;grid-template-columns:auto 1fr;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:13px;box-shadow:var(--shadow);gap:14px}.poster{width:92px;height:138px;border-radius:14px;object-fit:cover;background:var(--soft);border:1px solid var(--border)}.poster.placeholder{display:flex;align-items:center;justify-content:center;font-size:30px}.content{min-width:0}.title{margin:1px 0 0;font-size:19px;line-height:1.25;font-weight:800}.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}.tag{background:var(--soft);padding:6px 9px;border-radius:999px;font-size:12px;color:#504a43}.tag.suggestion{background:#fff0c9}.rating{font-size:14px;margin-top:10px;letter-spacing:1px}.notes{margin:9px 0 0;color:var(--muted);font-size:14px;line-height:1.45;white-space:pre-wrap}.actions{display:flex;gap:8px;margin-top:13px}.ghost,.danger{border:1px solid var(--border);background:transparent;border-radius:12px;padding:8px 10px;cursor:pointer;font-size:13px}.danger{color:var(--danger)}.empty{text-align:center;padding:58px 20px;color:var(--muted);border:1px dashed var(--border);border-radius:var(--radius)}.backup{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.backup button,.backup label{border:1px solid var(--border);background:var(--surface);padding:9px 12px;border-radius:12px;cursor:pointer;font-size:12px;font-weight:650}.backup input{display:none}.fab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));width:58px;height:58px;border-radius:50%;border:0;background:var(--accent);color:#fff;font-size:28px;box-shadow:0 12px 28px rgba(0,0,0,.2);cursor:pointer;display:none}dialog{width:min(94vw,560px);max-height:92vh;border:0;border-radius:24px;padding:0;box-shadow:0 22px 70px rgba(0,0,0,.24)}dialog::backdrop{background:rgba(0,0,0,.45)}.modal{padding:20px;background:var(--surface);overflow:auto;max-height:92vh}.modal h2{margin:0 0 16px;font-size:24px;letter-spacing:-.7px}.grid{display:grid;gap:12px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}label{font-size:13px;font-weight:700;display:grid;gap:6px}input,select,textarea{width:100%;border:1px solid var(--border);background:#fff;border-radius:13px;padding:12px 13px;outline:none;color:var(--text)}textarea{resize:vertical;min-height:84px}.hint{font-size:11px;color:var(--muted);line-height:1.35;font-weight:500}.image-preview{display:none;align-items:center;gap:12px;border:1px dashed var(--border);border-radius:14px;padding:10px}.image-preview img{width:62px;height:92px;object-fit:cover;border-radius:9px}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}.secondary{border:1px solid var(--border);background:transparent;padding:11px 14px;border-radius:13px;cursor:pointer}@media(max-width:580px){header .primary{display:none}.fab{display:block}.stats{gap:7px}.stat{padding:11px}.stat strong{font-size:19px}.row{grid-template-columns:1fr}.poster{width:78px;height:117px}.card{gap:11px}.title{font-size:17px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#171717">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Minha Estante</title>
+<style>
+:root{--bg:#f7f4ee;--surface:#fff;--text:#171717;--muted:#77736c;--border:#e7e0d6;--soft:#eee7dc;--accent:#171717;--danger:#a83f35;--radius:20px;--shadow:0 12px 30px rgba(0,0,0,.06)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}.app{width:min(100%,840px);margin:auto;padding:22px 16px 105px}header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:16px}h1{margin:0;font-size:clamp(30px,7vw,44px);letter-spacing:-1.6px}.subtitle{margin:6px 0 0;color:var(--muted);font-size:14px}.version{font-size:11px;color:var(--muted);margin-top:5px}.primary{border:0;background:var(--accent);color:#fff;padding:12px 15px;border-radius:14px;font-weight:750;cursor:pointer}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:16px 0}.stat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:13px}.stat strong{display:block;font-size:21px}.stat span{font-size:12px;color:var(--muted)}.toolbar{position:sticky;top:0;z-index:5;background:linear-gradient(var(--bg) 90%,rgba(247,244,238,0));padding:8px 0 15px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:5px;gap:5px;margin-bottom:10px}.tab{border:0;background:transparent;padding:11px 8px;border-radius:12px;font-weight:750;cursor:pointer}.tab.active{background:var(--accent);color:#fff}.search-wrap{position:relative}.glass{position:absolute;left:14px;top:50%;transform:translateY(-50%);pointer-events:none}.search{width:100%;border:1px solid var(--border);background:var(--surface);border-radius:15px;padding:14px 15px 14px 43px;outline:none}.control-row{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:9px}.sort{border:1px solid var(--border);background:var(--surface);border-radius:13px;padding:10px 12px;min-width:190px}.filters{display:flex;gap:8px;overflow-x:auto;padding:9px 0 0;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.chip{border:1px solid var(--border);background:var(--surface);padding:8px 11px;border-radius:999px;white-space:nowrap;font-size:12px;cursor:pointer}.chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}.section-title{display:flex;align-items:center;justify-content:space-between;margin:4px 2px 12px}.section-title h2{margin:0;font-size:22px}.section-title span{font-size:12px;color:var(--muted)}.list{display:grid;gap:12px}.card{display:grid;grid-template-columns:auto 1fr;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:13px;box-shadow:var(--shadow);gap:14px}.poster{width:92px;height:138px;border-radius:14px;object-fit:cover;background:var(--soft);border:1px solid var(--border)}.placeholder{width:92px;height:138px;border-radius:14px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:30px}.content{min-width:0}.title{margin:1px 0 0;font-size:19px;line-height:1.25;font-weight:800}.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}.tag{background:var(--soft);padding:6px 9px;border-radius:999px;font-size:12px;color:#504a43}.tag.suggestion{background:#fff0c9}.rating{font-size:14px;margin-top:10px;letter-spacing:1px}.notes{margin:9px 0 0;color:var(--muted);font-size:14px;line-height:1.45;white-space:pre-wrap}.actions{display:flex;gap:8px;margin-top:13px}.ghost,.danger{border:1px solid var(--border);background:transparent;border-radius:12px;padding:8px 10px;cursor:pointer;font-size:13px}.danger{color:var(--danger)}.empty{text-align:center;padding:58px 20px;color:var(--muted);border:1px dashed var(--border);border-radius:var(--radius)}.backup{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.backup button,.backup label{border:1px solid var(--border);background:var(--surface);padding:9px 12px;border-radius:12px;cursor:pointer;font-size:12px;font-weight:650}.backup input{display:none}.fab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));width:58px;height:58px;border-radius:50%;border:0;background:var(--accent);color:#fff;font-size:28px;box-shadow:0 12px 28px rgba(0,0,0,.2);cursor:pointer;display:none}dialog{width:min(94vw,560px);max-height:92vh;border:0;border-radius:24px;padding:0;box-shadow:0 22px 70px rgba(0,0,0,.24)}dialog::backdrop{background:rgba(0,0,0,.45)}.modal{padding:20px;background:var(--surface);overflow:auto;max-height:92vh}.modal h2{margin:0 0 16px;font-size:24px}.grid{display:grid;gap:12px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}label{font-size:13px;font-weight:700;display:grid;gap:6px}input,select,textarea{width:100%;border:1px solid var(--border);background:#fff;border-radius:13px;padding:12px 13px;outline:none;color:var(--text)}textarea{resize:vertical;min-height:84px}.hint{font-size:11px;color:var(--muted);line-height:1.35;font-weight:500}.image-preview{display:none;align-items:center;gap:12px;border:1px dashed var(--border);border-radius:14px;padding:10px}.image-preview img{width:62px;height:92px;object-fit:cover;border-radius:9px}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}.secondary{border:1px solid var(--border);background:transparent;padding:11px 14px;border-radius:13px;cursor:pointer}@media(max-width:580px){header .primary{display:none}.fab{display:block}.stats{gap:7px}.stat{padding:11px}.stat strong{font-size:19px}.control-row{grid-template-columns:1fr}.sort{width:100%;min-width:0}.row{grid-template-columns:1fr}.poster,.placeholder{width:78px;height:117px}.card{gap:11px}.title{font-size:17px}.tab{font-size:13px;padding:10px 5px}}
+</style>
 </head>
 <body>
 <main class="app">
-  <header>
-    <div>
-      <h1>Minha Estante</h1>
-      <p class="subtitle">Filmes, séries e livros que você já viu, está acompanhando ou quer conhecer.</p>
-      <div class="version">versão 5 • capas + progresso de séries</div>
-    </div>
-    <button class="primary" id="addBtn">+ Adicionar</button>
-  </header>
-
-  <section class="stats">
-    <div class="stat"><strong id="totalCount">0</strong><span>Total</span></div>
-    <div class="stat"><strong id="doneCount">0</strong><span>Concluídos</span></div>
-    <div class="stat"><strong id="futureCount">0</strong><span>Para o futuro</span></div>
-  </section>
-
-  <section class="toolbar">
-    <div class="search-wrap">
-      <span class="glass">🔎</span>
-      <input id="search" class="search" placeholder="Buscar para saber se você já viu ou leu...">
-    </div>
-    <div class="filters" id="typeFilters">
-      <button class="chip active" data-type="Todos">Todos</button>
-      <button class="chip" data-type="Filme">🎬 Filmes</button>
-      <button class="chip" data-type="Série">📺 Séries</button>
-      <button class="chip" data-type="Livro">📚 Livros</button>
-    </div>
-    <div class="filters" id="statusFilters">
-      <button class="chip active" data-status="Todos">Todos os status</button>
-      <button class="chip" data-status="Quero ver/ler">Quero ver/ler</button>
-      <button class="chip" data-status="Em andamento">Em andamento</button>
-      <button class="chip" data-status="Concluído">Concluído</button>
-      <button class="chip" data-status="Sugestão futura">💡 Sugestões</button>
-    </div>
-  </section>
-
-  <section id="list" class="list"></section>
-
-  <div class="backup">
-    <button id="exportBtn">Exportar backup</button>
-    <label>Importar backup<input id="importInput" type="file" accept=".json,application/json"></label>
-  </div>
+<header><div><h1>Minha Estante</h1><p class="subtitle">Sua coleção de séries, filmes e livros.</p><div class="version">versão 6 • abas + ordenação</div></div><button class="primary" id="addBtn">+ Adicionar</button></header>
+<section class="stats"><div class="stat"><strong id="totalCount">0</strong><span>Total</span></div><div class="stat"><strong id="doneCount">0</strong><span>Concluídos</span></div><div class="stat"><strong id="futureCount">0</strong><span>Para o futuro</span></div></section>
+<section class="toolbar">
+<div class="tabs" id="tabs"><button class="tab active" data-type="Série">📺 Séries</button><button class="tab" data-type="Filme">🎬 Filmes</button><button class="tab" data-type="Livro">📚 Livros</button></div>
+<div class="search-wrap"><span class="glass">🔎</span><input id="search" class="search" placeholder="Buscar nesta aba..."></div>
+<div class="control-row"><div class="filters" id="statusFilters"><button class="chip active" data-status="Todos">Todos</button><button class="chip" data-status="Quero ver/ler">Quero ver/ler</button><button class="chip" data-status="Em andamento">Em andamento</button><button class="chip" data-status="Concluído">Concluído</button><button class="chip" data-status="Sugestão futura">💡 Sugestões</button></div><select id="sortSelect" class="sort"><option value="date-desc">Data de cadastro: recentes</option><option value="date-asc">Data de cadastro: antigos</option><option value="az">Ordem alfabética: A–Z</option><option value="za">Ordem alfabética: Z–A</option></select></div>
+</section>
+<div class="section-title"><h2 id="sectionTitle">Séries</h2><span id="resultCount"></span></div>
+<section id="list" class="list"></section>
+<div class="backup"><button id="exportBtn">Exportar backup</button><label>Importar backup<input id="importInput" type="file" accept=".json,application/json"></label></div>
 </main>
-
-<button class="fab" id="fab" aria-label="Adicionar item">+</button>
-
-<dialog id="dialog">
-  <form method="dialog" class="modal" id="itemForm">
-    <h2 id="modalTitle">Adicionar item</h2>
-    <div class="grid">
-      <label>Título
-        <input id="titleInput" required placeholder="Ex.: Black Bird">
-      </label>
-
-      <div class="row">
-        <label>Tipo
-          <select id="typeInput">
-            <option>Filme</option>
-            <option>Série</option>
-            <option>Livro</option>
-          </select>
-        </label>
-        <label>Status
-          <select id="statusInput">
-            <option>Quero ver/ler</option>
-            <option>Em andamento</option>
-            <option>Concluído</option>
-            <option>Sugestão futura</option>
-          </select>
-        </label>
-      </div>
-
-      <label id="genreField">Gênero
-        <select id="genreInput">
-          <option value="">Selecionar gênero</option>
-          <option>Ação</option><option>Aventura</option><option>Animação</option><option>Biografia</option><option>Comédia</option><option>Crime</option><option>Documentário</option><option>Documentário True Crime</option><option>Drama</option><option>Fantasia</option><option>Ficção Científica</option><option>Investigação Criminal</option><option>Musical</option><option>Romance</option><option>Suspense</option><option>Thriller</option><option>True Crime</option><option>Terror</option><option>Outro</option>
-        </select>
-      </label>
-
-      <div class="row" id="seriesProgressField">
-        <label>Temporada em que parou
-          <input id="seasonInput" type="number" inputmode="numeric" min="1" step="1" placeholder="Ex.: 2">
-        </label>
-        <label>Episódio em que parou
-          <input id="episodeInput" type="number" inputmode="numeric" min="1" step="1" placeholder="Ex.: 5">
-        </label>
-      </div>
-
-      <label>Link da capa / pôster
-        <input id="imageUrlInput" type="url" inputmode="url" placeholder="https://...imagem.jpg">
-        <span class="hint">Cole o endereço direto da imagem. No Google Imagens, use “Copiar endereço da imagem”.</span>
-      </label>
-
-      <div class="image-preview" id="imagePreview">
-        <img id="imagePreviewImg" alt="Prévia da capa">
-        <span class="hint" id="imagePreviewText">Prévia da capa</span>
-      </div>
-
-      <label>Quem indicou / origem da sugestão
-        <input id="suggestionSourceInput" placeholder="Ex.: indicação da Carol, vi no Instagram...">
-      </label>
-
-      <label>Nota
-        <select id="ratingInput">
-          <option value="">Sem nota</option>
-          <option value="1">1 ★</option><option value="2">2 ★★</option><option value="3">3 ★★★</option><option value="4">4 ★★★★</option><option value="5">5 ★★★★★</option>
-        </select>
-      </label>
-
-      <label>Observações
-        <textarea id="notesInput" placeholder="Anote o que quiser lembrar..."></textarea>
-      </label>
-    </div>
-
-    <div class="modal-actions">
-      <button type="button" class="secondary" id="cancelBtn">Cancelar</button>
-      <button type="submit" class="primary">Salvar</button>
-    </div>
-  </form>
-</dialog>
-
+<button class="fab" id="fab">+</button>
+<dialog id="dialog"><form method="dialog" class="modal" id="itemForm"><h2 id="modalTitle">Adicionar item</h2><div class="grid">
+<label>Título<input id="titleInput" required placeholder="Ex.: Black Bird"></label>
+<div class="row"><label>Tipo<select id="typeInput"><option>Série</option><option>Filme</option><option>Livro</option></select></label><label>Status<select id="statusInput"><option>Quero ver/ler</option><option>Em andamento</option><option>Concluído</option><option>Sugestão futura</option></select></label></div>
+<label id="genreField">Gênero<select id="genreInput"><option value="">Selecionar gênero</option><option>Ação</option><option>Aventura</option><option>Animação</option><option>Biografia</option><option>Comédia</option><option>Crime</option><option>Documentário</option><option>Documentário True Crime</option><option>Drama</option><option>Fantasia</option><option>Ficção Científica</option><option>Investigação Criminal</option><option>Musical</option><option>Romance</option><option>Suspense</option><option>Thriller</option><option>True Crime</option><option>Terror</option><option>Outro</option></select></label>
+<div class="row" id="seriesProgressField"><label>Temporada em que parou<input id="seasonInput" type="number" inputmode="numeric" min="1" step="1" placeholder="Ex.: 2"></label><label>Episódio em que parou<input id="episodeInput" type="number" inputmode="numeric" min="1" step="1" placeholder="Ex.: 5"></label></div>
+<label>Link da capa / pôster<input id="imageUrlInput" type="url" inputmode="url" placeholder="https://...imagem.jpg"><span class="hint">Cole o endereço direto da imagem.</span></label>
+<div class="image-preview" id="imagePreview"><img id="imagePreviewImg" alt="Prévia"><span class="hint" id="imagePreviewText">Prévia da capa</span></div>
+<label>Quem indicou / origem da sugestão<input id="suggestionSourceInput" placeholder="Ex.: indicação de alguém, Instagram..."></label>
+<label>Nota<select id="ratingInput"><option value="">Sem nota</option><option value="1">1 ★</option><option value="2">2 ★★</option><option value="3">3 ★★★</option><option value="4">4 ★★★★</option><option value="5">5 ★★★★★</option></select></label>
+<label>Observações<textarea id="notesInput" placeholder="Anote o que quiser lembrar..."></textarea></label>
+</div><div class="modal-actions"><button type="button" class="secondary" id="cancelBtn">Cancelar</button><button type="submit" class="primary">Salvar</button></div></form></dialog>
 <script>
-const STORAGE_KEY = "minha-estante-v1";
-const SAFETY_BACKUP_KEY = "minha-estante-safety-backup-v5";
-let items;
-try { items = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); if (!Array.isArray(items)) items = []; } catch { items = []; }
-if (localStorage.getItem(STORAGE_KEY) && !localStorage.getItem(SAFETY_BACKUP_KEY)) localStorage.setItem(SAFETY_BACKUP_KEY, localStorage.getItem(STORAGE_KEY));
-let editingId = null, activeType = "Todos", activeStatus = "Todos";
-const $ = id => document.getElementById(id);
-const list=$("list"),dialog=$("dialog"),form=$("itemForm"),titleInput=$("titleInput"),typeInput=$("typeInput"),statusInput=$("statusInput"),genreInput=$("genreInput"),genreField=$("genreField"),seriesProgressField=$("seriesProgressField"),seasonInput=$("seasonInput"),episodeInput=$("episodeInput"),imageUrlInput=$("imageUrlInput"),imagePreview=$("imagePreview"),imagePreviewImg=$("imagePreviewImg"),imagePreviewText=$("imagePreviewText"),suggestionSourceInput=$("suggestionSourceInput"),ratingInput=$("ratingInput"),notesInput=$("notesInput"),searchInput=$("search");
-function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(items));render()}
-function escapeHtml(value){return String(value??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
-function safeImageUrl(value){const url=String(value||"").trim();return /^https?:\/\//i.test(url)?url:""}
-function typeIcon(type){return type==="Filme"?"🎬":type==="Série"?"📺":"📚"}
-function stars(rating){if(!rating)return"";const n=Number(rating);return"★".repeat(n)+"☆".repeat(5-n)}
-function updateConditionalFields(){const isMovie=typeInput.value==="Filme",isSeries=typeInput.value==="Série";genreField.style.display=isMovie?"grid":"none";seriesProgressField.style.display=isSeries?"grid":"none";if(!isMovie)genreInput.value="";if(!isSeries){seasonInput.value="";episodeInput.value=""}}
-function updateImagePreview(){const url=safeImageUrl(imageUrlInput.value);if(!url){imagePreview.style.display="none";imagePreviewImg.removeAttribute("src");return}imagePreview.style.display="flex";imagePreviewText.textContent="Carregando prévia...";imagePreviewImg.onload=()=>imagePreviewText.textContent="Capa pronta para usar";imagePreviewImg.onerror=()=>imagePreviewText.textContent="Esse link não permite exibir a imagem. Tente copiar o endereço direto da imagem.";imagePreviewImg.src=url}
-function openModal(item=null){editingId=item?.id||null;$("modalTitle").textContent=item?"Editar item":"Adicionar item";titleInput.value=item?.title||"";typeInput.value=item?.type||"Filme";statusInput.value=item?.status||"Quero ver/ler";genreInput.value=item?.genre||"";seasonInput.value=item?.season||"";episodeInput.value=item?.episode||"";imageUrlInput.value=item?.imageUrl||"";suggestionSourceInput.value=item?.suggestionSource||"";ratingInput.value=item?.rating||"";notesInput.value=item?.notes||"";updateConditionalFields();updateImagePreview();dialog.showModal();setTimeout(()=>titleInput.focus(),80)}
-function seriesProgress(item){if(item.type!=="Série"||(!item.season&&!item.episode))return"";const bits=[];if(item.season)bits.push("T"+escapeHtml(item.season));if(item.episode)bits.push("E"+escapeHtml(item.episode));return `<span class="tag">▶ ${bits.join(" • ")}</span>`}
-function posterMarkup(item){const url=safeImageUrl(item.imageUrl);if(url)return `<img class="poster" src="${escapeHtml(url)}" alt="Capa de ${escapeHtml(item.title)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="poster placeholder" style="display:none">${typeIcon(item.type)}</div>`;return `<div class="poster placeholder">${typeIcon(item.type)}</div>`}
-function searchableText(item){return [item.title,item.type,item.status,item.genre,item.notes,item.suggestionSource,item.season,item.episode].filter(Boolean).join(" ").toLowerCase()}
-function render(){const term=searchInput.value.trim().toLowerCase();const filtered=items.filter(i=>activeType==="Todos"||i.type===activeType).filter(i=>activeStatus==="Todos"||i.status===activeStatus).filter(i=>!term||searchableText(i).includes(term)).sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));$("totalCount").textContent=items.length;$("doneCount").textContent=items.filter(i=>i.status==="Concluído").length;$("futureCount").textContent=items.filter(i=>i.status==="Quero ver/ler"||i.status==="Sugestão futura").length;if(!filtered.length){list.innerHTML=`<div class="empty">${term?"Nenhum resultado encontrado.":"Nada por aqui ainda.<br>Adicione um filme, série ou livro."}</div>`;return}list.innerHTML=filtered.map(item=>`<article class="card"><div>${posterMarkup(item)}</div><div class="content"><h3 class="title">${escapeHtml(item.title)}</h3><div class="meta"><span class="tag">${typeIcon(item.type)} ${escapeHtml(item.type)}</span>${item.genre?`<span class="tag">🎭 ${escapeHtml(item.genre)}</span>`:""}${seriesProgress(item)}<span class="tag ${item.status==="Sugestão futura"?"suggestion":""}">${item.status==="Sugestão futura"?"💡 ":""}${escapeHtml(item.status||"")}</span></div>${item.suggestionSource?`<p class="notes"><strong>Indicação:</strong> ${escapeHtml(item.suggestionSource)}</p>`:""}${item.rating?`<div class="rating">${stars(item.rating)} <span style="color:#77736c">(${escapeHtml(item.rating)}/5)</span></div>`:""}${item.notes?`<p class="notes">${escapeHtml(item.notes)}</p>`:""}<div class="actions"><button class="ghost" onclick="editItem('${escapeHtml(item.id)}')">Editar</button><button class="danger" onclick="deleteItem('${escapeHtml(item.id)}')">Excluir</button></div></div></article>`).join("")}
-window.editItem=function(id){const item=items.find(i=>i.id===id);if(item)openModal(item)};
-window.deleteItem=function(id){const item=items.find(i=>i.id===id);if(!item)return;if(confirm(`Excluir "${item.title}"?`)){items=items.filter(i=>i.id!==id);save()}};
-form.addEventListener("submit",e=>{e.preventDefault();const existing=editingId?(items.find(i=>i.id===editingId)||{}):{};const payload={...existing,id:editingId||crypto.randomUUID(),title:titleInput.value.trim(),type:typeInput.value,status:statusInput.value,genre:typeInput.value==="Filme"?genreInput.value:"",season:typeInput.value==="Série"?seasonInput.value:"",episode:typeInput.value==="Série"?episodeInput.value:"",imageUrl:safeImageUrl(imageUrlInput.value),suggestionSource:suggestionSourceInput.value.trim(),rating:ratingInput.value,notes:notesInput.value.trim(),updatedAt:Date.now()};if(!payload.title)return;if(editingId){const index=items.findIndex(i=>i.id===editingId);if(index>=0)items[index]=payload}else items.push(payload);save();dialog.close();form.reset();editingId=null});
-$("cancelBtn").addEventListener("click",()=>dialog.close());$("addBtn").addEventListener("click",()=>openModal());$("fab").addEventListener("click",()=>openModal());typeInput.addEventListener("change",updateConditionalFields);imageUrlInput.addEventListener("input",updateImagePreview);searchInput.addEventListener("input",render);
-document.querySelectorAll("#typeFilters .chip").forEach(btn=>btn.addEventListener("click",()=>{activeType=btn.dataset.type;document.querySelectorAll("#typeFilters .chip").forEach(b=>b.classList.remove("active"));btn.classList.add("active");render()}));
-document.querySelectorAll("#statusFilters .chip").forEach(btn=>btn.addEventListener("click",()=>{activeStatus=btn.dataset.status;document.querySelectorAll("#statusFilters .chip").forEach(b=>b.classList.remove("active"));btn.classList.add("active");render()}));
-$("exportBtn").addEventListener("click",()=>{const blob=new Blob([JSON.stringify(items,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="minha-estante-backup.json";a.click();URL.revokeObjectURL(url)});
-$("importInput").addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;try{const parsed=JSON.parse(await file.text());if(!Array.isArray(parsed))throw new Error();localStorage.setItem("minha-estante-before-import-v5",JSON.stringify(items));items=parsed;save();alert("Backup importado com sucesso.")}catch{alert("Não foi possível importar esse arquivo.")}e.target.value=""});
-if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").then(reg=>reg.update()).catch(()=>{}));
-updateConditionalFields();render();
+const STORAGE_KEY="minha-estante-v1",SAFETY_KEY="minha-estante-safety-backup-v6";let items=[];try{items=JSON.parse(localStorage.getItem(STORAGE_KEY)||"[]");if(!Array.isArray(items))items=[]}catch{items=[]}if(localStorage.getItem(STORAGE_KEY)&&!localStorage.getItem(SAFETY_KEY))localStorage.setItem(SAFETY_KEY,localStorage.getItem(STORAGE_KEY));let editingId=null,activeType="Série",activeStatus="Todos",sortMode="date-desc";const $=id=>document.getElementById(id),list=$("list"),dialog=$("dialog"),form=$("itemForm"),titleInput=$("titleInput"),typeInput=$("typeInput"),statusInput=$("statusInput"),genreInput=$("genreInput"),genreField=$("genreField"),seriesProgressField=$("seriesProgressField"),seasonInput=$("seasonInput"),episodeInput=$("episodeInput"),imageUrlInput=$("imageUrlInput"),imagePreview=$("imagePreview"),imagePreviewImg=$("imagePreviewImg"),imagePreviewText=$("imagePreviewText"),suggestionSourceInput=$("suggestionSourceInput"),ratingInput=$("ratingInput"),notesInput=$("notesInput"),searchInput=$("search");
+function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(items));render()}function esc(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}function safeUrl(v){const u=String(v||"").trim();return /^https?:\/\//i.test(u)?u:""}function icon(t){return t==="Série"?"📺":t==="Filme"?"🎬":"📚"}function stars(r){if(!r)return"";let n=Number(r);return"★".repeat(n)+"☆".repeat(5-n)}function updateFields(){let movie=typeInput.value==="Filme",series=typeInput.value==="Série";genreField.style.display=movie?"grid":"none";seriesProgressField.style.display=series?"grid":"none";if(!movie)genreInput.value="";if(!series){seasonInput.value="";episodeInput.value=""}}function preview(){let u=safeUrl(imageUrlInput.value);if(!u){imagePreview.style.display="none";return}imagePreview.style.display="flex";imagePreviewText.textContent="Carregando...";imagePreviewImg.onload=()=>imagePreviewText.textContent="Capa pronta";imagePreviewImg.onerror=()=>imagePreviewText.textContent="Esse link não permite exibir a imagem.";imagePreviewImg.src=u}
+function openModal(item=null){editingId=item?.id||null;$("modalTitle").textContent=item?"Editar item":"Adicionar item";titleInput.value=item?.title||"";typeInput.value=item?.type||activeType;statusInput.value=item?.status||"Quero ver/ler";genreInput.value=item?.genre||"";seasonInput.value=item?.season||"";episodeInput.value=item?.episode||"";imageUrlInput.value=item?.imageUrl||"";suggestionSourceInput.value=item?.suggestionSource||"";ratingInput.value=item?.rating||"";notesInput.value=item?.notes||"";updateFields();preview();dialog.showModal();setTimeout(()=>titleInput.focus(),50)}
+function progress(i){if(i.type!=="Série"||(!i.season&&!i.episode))return"";let p=[];if(i.season)p.push("T"+esc(i.season));if(i.episode)p.push("E"+esc(i.episode));return`<span class="tag">▶ ${p.join(" • ")}</span>`}function poster(i){let u=safeUrl(i.imageUrl);return u?`<img class="poster" src="${esc(u)}" alt="Capa de ${esc(i.title)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">${icon(i.type)}</div>`:`<div class="placeholder">${icon(i.type)}</div>`}
+function sortItems(arr){return arr.sort((a,b)=>{if(sortMode==="az")return String(a.title||"").localeCompare(String(b.title||""),"pt-BR",{sensitivity:"base"});if(sortMode==="za")return String(b.title||"").localeCompare(String(a.title||""),"pt-BR",{sensitivity:"base"});let da=Number(a.createdAt||a.updatedAt||0),db=Number(b.createdAt||b.updatedAt||0);return sortMode==="date-asc"?da-db:db-da})}
+function render(){let term=searchInput.value.trim().toLowerCase();let filtered=items.filter(i=>i.type===activeType).filter(i=>activeStatus==="Todos"||i.status===activeStatus).filter(i=>!term||[i.title,i.genre,i.notes,i.suggestionSource].some(v=>String(v||"").toLowerCase().includes(term)));sortItems(filtered);$("totalCount").textContent=items.length;$("doneCount").textContent=items.filter(i=>i.status==="Concluído").length;$("futureCount").textContent=items.filter(i=>i.status==="Sugestão futura"||i.status==="Quero ver/ler").length;$("sectionTitle").textContent=activeType==="Série"?"Séries":activeType==="Filme"?"Filmes":"Livros";$("resultCount").textContent=filtered.length+" item"+(filtered.length===1?"":"s");if(!filtered.length){list.innerHTML=`<div class="empty">Nenhum item nesta aba com os filtros atuais.</div>`;return}list.innerHTML=filtered.map(i=>`<article class="card">${poster(i)}<div class="content"><h3 class="title">${esc(i.title)}</h3><div class="meta"><span class="tag">${icon(i.type)} ${esc(i.type)}</span>${i.genre?`<span class="tag">🎭 ${esc(i.genre)}</span>`:""}${progress(i)}<span class="tag ${i.status==="Sugestão futura"?"suggestion":""}">${i.status==="Sugestão futura"?"💡 ":""}${esc(i.status)}</span></div>${i.suggestionSource?`<p class="notes"><strong>Indicação:</strong> ${esc(i.suggestionSource)}</p>`:""}${i.rating?`<div class="rating">${stars(i.rating)} <span style="color:#77736c">(${i.rating}/5)</span></div>`:""}${i.notes?`<p class="notes">${esc(i.notes)}</p>`:""}<div class="actions"><button class="ghost" onclick="editItem('${i.id}')">Editar</button><button class="danger" onclick="deleteItem('${i.id}')">Excluir</button></div></div></article>`).join("")}
+window.editItem=id=>{let i=items.find(x=>x.id===id);if(i)openModal(i)};window.deleteItem=id=>{let i=items.find(x=>x.id===id);if(i&&confirm(`Excluir "${i.title}"?`)){items=items.filter(x=>x.id!==id);save()}};
+form.addEventListener("submit",e=>{e.preventDefault();let existing=editingId?items.find(i=>i.id===editingId)||{}:{},now=Date.now(),payload={...existing,id:editingId||crypto.randomUUID(),title:titleInput.value.trim(),type:typeInput.value,status:statusInput.value,genre:typeInput.value==="Filme"?genreInput.value:"",season:typeInput.value==="Série"?seasonInput.value:"",episode:typeInput.value==="Série"?episodeInput.value:"",imageUrl:safeUrl(imageUrlInput.value),suggestionSource:suggestionSourceInput.value.trim(),rating:ratingInput.value,notes:notesInput.value.trim(),createdAt:existing.createdAt||existing.updatedAt||now,updatedAt:now};if(!payload.title)return;if(editingId){let idx=items.findIndex(i=>i.id===editingId);items[idx]=payload}else items.push(payload);activeType=payload.type;document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.type===activeType));save();dialog.close();form.reset();editingId=null});
+$("cancelBtn").addEventListener("click",()=>dialog.close());typeInput.addEventListener("change",updateFields);imageUrlInput.addEventListener("input",preview);$("addBtn").addEventListener("click",()=>openModal());$("fab").addEventListener("click",()=>openModal());searchInput.addEventListener("input",render);$("sortSelect").addEventListener("change",e=>{sortMode=e.target.value;render()});document.querySelectorAll(".tab").forEach(btn=>btn.addEventListener("click",()=>{activeType=btn.dataset.type;document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));btn.classList.add("active");searchInput.value="";render()}));document.querySelectorAll("#statusFilters .chip").forEach(btn=>btn.addEventListener("click",()=>{activeStatus=btn.dataset.status;document.querySelectorAll("#statusFilters .chip").forEach(b=>b.classList.remove("active"));btn.classList.add("active");render()}));
+$("exportBtn").addEventListener("click",()=>{let blob=new Blob([JSON.stringify(items,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="minha-estante-backup.json";a.click();URL.revokeObjectURL(url)});$("importInput").addEventListener("change",async e=>{let file=e.target.files[0];if(!file)return;try{let parsed=JSON.parse(await file.text());if(!Array.isArray(parsed))throw new Error();items=parsed;save();alert("Backup importado com sucesso.")}catch{alert("Não foi possível importar esse arquivo.")}e.target.value=""});if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js"));updateFields();render();
 </script>
 </body>
 </html>
